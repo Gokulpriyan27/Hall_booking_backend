@@ -10,7 +10,7 @@ const createHall = async(req,res)=>{
         }
         const hallCreation = await new Hall(req.body);
         await hallCreation.save();
-        return res.status(201).send({message:"Hall creation successful"})
+        return res.status(201).send({message:`Hall creation successful and the id is ${hallCreation._id} `})
     } catch (error) {
         return res.status(500).send({message:"Error while creating hall",error:error})
     }

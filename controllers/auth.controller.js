@@ -28,7 +28,7 @@ const register = async(req,res)=>{
             return res.status(500).send({message:"Error registering user"})
         }
 
-        return res.status(201).send({message:"User registerion successful"})
+        return res.status(201).send({message:`User registerion successful and the user id is ${registerUser._id}`})
 
 
     } catch (error) {

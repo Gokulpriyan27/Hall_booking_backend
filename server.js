@@ -14,8 +14,22 @@ const hallRoutes = require("./routes/createhall.routes")
 const bookingRoutes = require("./routes/booking.routes")
 const authRoutes = require("./routes/auth.routes")
 
+
 app.get("/",(req,res)=>{
-    res.send("welcome to hall booking API")
+    const htmlResponse = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Hall Booking API</title>
+      </head>
+      <body>
+        <h1>Hall Booking API</h1>
+        <p>Welcome! Read the docs in the below link to explore hall booking API</p>
+        <a href="https://github.com/Gokulpriyan27/Hall_booking_backend/blob/main/Api%20Documentation.txt">https://github.com/Gokulpriyan27/Hall_booking_backend/blob/main/Api%20Documentation.txt</a>
+      </body>
+    </html>
+  `;
+    res.send(htmlResponse)
 })
 
 app.use("/api/auth",authRoutes)
